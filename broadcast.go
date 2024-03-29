@@ -111,7 +111,7 @@ func (l *Listener[T]) Wait() (value T, ok bool) {
 				return value, ok
 			}
 		case <-l.messagesList.closeCh:
-			return l.Peek()
+			return value, ok
 		}
 	}
 }

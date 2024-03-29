@@ -9,7 +9,7 @@ import (
 )
 
 func equal[T comparable](t *testing.T, expected T, got T) {
-	// Not using t.Helper() is intentional
+	t.Helper()
 	if expected != got {
 		t.Fatalf("expected %v, got %v", expected, got)
 	}
